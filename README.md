@@ -1,5 +1,4 @@
 # API REST para una Aplicación de Comercio Electrónico
-Hemos desarrollado esta AP
 
 ## Tecnología utilizada
 *Java
