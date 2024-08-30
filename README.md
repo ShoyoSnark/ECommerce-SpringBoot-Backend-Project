@@ -1,35 +1,35 @@
 # API REST para una Aplicación de Comercio Electrónico
 
 ## Tecnología utilizada
-*Java
-*Spring Framework
-*Spring Boot
-*Spring Data JPA
-*Hibernate
-*MySQL
+* Java
+* Spring Framework
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* MySQL
 
-## Módulos
-*Módulo de Inicio y Cierre de Sesión
-*Módulo de Vendedores
-*Módulo de Clientes
-*Módulo de Productos
-*Módulo de Carrito
-*Módulo de Pedidos
+## Módulos 
+* Módulo de Inicio y Cierre de Sesión
+* Módulo de Vendedores
+* Módulo de Clientes
+* Módulo de Productos
+* Módulo de Carrito
+* Módulo de Pedidos
 ## Características
-*Autenticación y validación de Clientes y Vendedores con un token de sesión válido por 1 hora para fines de seguridad.
-*Funciones del Vendedor:
-   *Rol de Administrador de toda la aplicación.
-   *Solo el vendedor registrado con un token de sesión válido puede añadir/actualizar/eliminar productos de la base de datos principal.
-   *El vendedor puede acceder a los detalles de diferentes clientes y pedidos.
-*Funciones del Cliente:
-   *Registrarse en la aplicación e iniciar sesión para obtener un token de sesión válido.
-   *Ver diferentes productos, añadirlos al carrito y realizar pedidos.
-   *Solo el usuario que haya iniciado sesión puede acceder a sus pedidos, carrito y otras funciones.
+* Autenticación y validación de Clientes y Vendedores con un token de sesión válido por 1 hora para fines de seguridad.
+* Funciones del Vendedor:
+   * Rol de Administrador de toda la aplicación.
+   * Solo el vendedor registrado con un token de sesión válido puede añadir/actualizar/eliminar productos de la base de datos principal.
+   * El vendedor puede acceder a los detalles de diferentes clientes y pedidos.
+* Funciones del Cliente:
+   * Registrarse en la aplicación e iniciar sesión para obtener un token de sesión válido.
+   * Ver diferentes productos, añadirlos al carrito y realizar pedidos.
+   * Solo el usuario que haya iniciado sesión puede acceder a sus pedidos, carrito y otras funciones.
 
 
 ## Instalación y Ejecución
-*Antes de ejecutar el servidor API, debes actualizar la configuración de la base de datos dentro del archivo application.properties.
-*Actualiza el número de puerto, el nombre de usuario y la contraseña según la configuración de tu base de datos local.se config.
+* Antes de ejecutar el servidor API, debes actualizar la configuración de la base de datos dentro del archivo application.properties.
+* Actualiza el número de puerto, el nombre de usuario y la contraseña según la configuración de tu base de datos local.se config.
 
 ```
     server.port=8009
