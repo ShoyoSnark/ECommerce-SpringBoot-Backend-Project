@@ -55,7 +55,7 @@
 ### Ejecución del servidor.
 
 * Para ejecutar la API, desde Visual Studio Code deben abrir el archivo deECommerceBackendApplication(E-Commerce-Backend\src\main\java\com\masai\ECommerceBackendApplication.java)
-* Una vez abierto el archivo, encima de la función public static void main. Les saldra dos opciones, Run|Debug, seleccionan Debug y esperan que se inicialice el servidor API
+* Una vez abierto el archivo, encima de la función public static void main. Les saldra dos opciones, Run|Debug, seleccionan Run y esperan que se inicialice el servidor API
 
 ## Endpoint Raíz de la API
 * Para acceder a la API desde el navegador, ingresen la siguiente URL:
