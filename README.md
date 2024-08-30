@@ -1,56 +1,36 @@
-# REST API for an E-Commerce Application
+# API REST para una Aplicación de Comercio Electrónico
+Hemos desarrollado esta AP
 
-* We have developed this REST API for an e-commerce application. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step.
-* This project is developed by a team of 5 members during our project week in Masai School, Bengaluru. 
+## Tecnología utilizada
+*Java
+*Spring Framework
+*Spring Boot
+*Spring Data JPA
+*Hibernate
+*MySQL
 
-
-## E-R Diagram for the application
-
-![E-R Diagram](./ER%20Diagram/E-Commerce%20API%20ER%20Diagram.jpeg?raw=true)
-
-## Tech Stack
-
-* Java
-* Spring Framework
-* Spring Boot
-* Spring Data JPA
-* Hibernate
-* MySQL
-
-## Modules
-
-* Login, Logout Module
-* Seller Module
-* Customer Module
-* Product Module
-* Cart Module
-* Order Module
-
-## Features
-
-* Customer and Seller authentication & validation with session token having validity of 1 hour for security purposes
-* Seller Features:
-    * Administrator Role of the entire application
-    * Only registered seller with valid session token can add/update/delete products from main database
-    * Seller can access the details of different customers, orders
-* Customer Features:
-    * Registering themselves with application, and logging in to get the valid session token
-    * Viewing different products and adding them to cart and placing orders
-    * Only logged in user can access his orders, cart and other features.
-
-## Contributors
-
-* [@abinashpanigrahi](https://github.com/abinashpanigrahi)
-* [@Dathuram16](https://github.com/Dathuram16)
-* [@kamalvinjamoori](https://github.com/kamalvinjamoori)
-* [@anandrajsingh05](https://github.com/anandrajsingh05)
-* [@Adithyanathkv](https://github.com/Adithyanathkv)
+## Módulos
+*Módulo de Inicio y Cierre de Sesión
+*Módulo de Vendedores
+*Módulo de Clientes
+*Módulo de Productos
+*Módulo de Carrito
+*Módulo de Pedidos
+## Características
+*Autenticación y validación de Clientes y Vendedores con un token de sesión válido por 1 hora para fines de seguridad.
+*Funciones del Vendedor:
+   *Rol de Administrador de toda la aplicación.
+   *Solo el vendedor registrado con un token de sesión válido puede añadir/actualizar/eliminar productos de la base de datos principal.
+   *El vendedor puede acceder a los detalles de diferentes clientes y pedidos.
+*Funciones del Cliente:
+   *Registrarse en la aplicación e iniciar sesión para obtener un token de sesión válido.
+   *Ver diferentes productos, añadirlos al carrito y realizar pedidos.
+   *Solo el usuario que haya iniciado sesión puede acceder a sus pedidos, carrito y otras funciones.
 
 
-## Installation & Run
-
-* Before running the API server, you should update the database config inside the [application.properties](E-Commerce-Backend\src\main\resources\application.properties) file. 
-* Update the port number, username and password as per your local database config.
+## Instalación y Ejecución
+*Antes de ejecutar el servidor API, debes actualizar la configuración de la base de datos dentro del archivo application.properties.
+*Actualiza el número de puerto, el nombre de usuario y la contraseña según la configuración de tu base de datos local.se config.
 
 ```
     server.port=8009
@@ -62,82 +42,79 @@
 
 ```
 
-## API Root Endpoint
+## Endpoint Raíz de la API
 
 `https://localhost:8009/`
 
 `http://localhost:8009/swagger-ui/index.html#/`
 
 
-## API Module Endpoints
+## Endpoints de los Módulos de la API
 
-### Login & Logout Module
-
-* `POST /register/customer` : Register a new customer
-* `POST /login/customer` : Logging in customer with valid mobile number & password
-* `POST /logout/customer` : Logging out customer based on session token
-* `POST /register/seller` : Register a new seller
-* `POST /login/seller` : Logging in Seller
-* `POST /logout/seller` : Logging out Seller based on session token
-
-
-### Customer Module
-
-* `GET /customer/current` : Getting currently logged in customer
-* `GET /customer/orders` : Getting order history of logged in customer
-* `GET /customers` : Getting All customers
-* `PUT /customer` : Updates logged in customer
-* `PUT /customer/update/password` : Updates customer password
-* `PUT /customer/update/card` : Updates credit card details
-* `PUT /customer/update/address?type=home` : Updates customer's home address
-* `PUT /customer/update/credentials` : Updates email address and mobile number
-* `DELETE /customer` : Deletes logged in user with valid session token
-* `DELETE /customer/delete/address?type=home` : Deletes customer's home address
+### Módulo de Inicio y Cierre de Sesión
+* `POST /register/customer` : Registrar un nuevo cliente.
+* `POST /login/customer` : Iniciar sesión para un cliente con número de móvil y contraseña válidos.
+* `POST /logout/customer` : Cerrar sesión del cliente basado en el token de sesión.
+* `POST /register/seller` : Registrar un nuevo vendedor.
+* `POST /login/seller` : Iniciar sesión para el vendedor.
+* `POST /logout/seller` : Cerrar sesión del vendedor basado en el token de sesión.
 
 
-### Seller Module
-
-* `GET /seller/{sellerid}` : Gets seller with passed seller Id
-* `GET /seller/current` : Gets seller details for currently logged in seller
-* `GET /sellers` : Gets all sellers
-* `POST /addseller` : Adding new seller
-* `PUT /seller` : Updates seller details
-* `PUT /seller/update/password` : Updates seller password
-* `PUT /seller/update/mobile` : Updates seller mobile number
-* `DELETE /seller/{sellerid}` : Deletes seller with passed id
-
-
-### Product Module
-
-* `GET /product/{id}` : Gets product with given product id
-* `GET /products` : Gets all products
-* `GET /products/{category}` : Gets product with given category
-* `GET /products/seller/{id}` : Gets product of given seller id
-* `POST /products` : Adds a new product to database
-* `PUT /products` : Updates the product with given product id
-* `PUT /products/{id}` : Updates product quantity
-* `DELETE /product/{id}` : Deletes product with given id
+### Módulo de Clientes
+* `GET /customer/current` : Obtener el cliente actualmente registrado.
+* `GET /customer/orders` : Obtener el historial de pedidos del cliente registrado.
+* `GET /customers` : Obtener todos los clientes.
+* `PUT /customer` : Actualizar al cliente registrado.
+* `PUT /customer/update/password` : Actualizar la contraseña del cliente.
+* `PUT /customer/update/card` : Actualizar los detalles de la tarjeta de crédito.
+* `PUT /customer/update/address?type=home` : Actualizar la dirección de casa del cliente.
+* `PUT /customer/update/credentials` : Actualizar el correo electrónico y el número de móvil.
+* `DELETE /customer` : Eliminar al usuario registrado con un token de sesión válido.
+* `DELETE /customer/delete/address?type=home` : Eliminar la dirección de casa del cliente.
 
 
-### Cart Module
+### Módulo de Vendedores
 
-* `GET /cart` : Get all items in Customer Cart
-* `POST /cart/add` : Add item to Cart
-* `DELETE /cart` : Remove item from Cart
-* `DELETE /cart/clear` : Clear entire cart
-
-
-### Order Module
-
-* `GET /orders/{id}` : Gets order details with given order id
-* `GET /orders` : Gets all orders
-* `GET /orders/by/date` : Gets orders placed on given date (DD-MM-YYYY)
-* `POST /order/place` : Places a new order based on cart items
-* `PUT /orders/{id}` : Updates a pending order
-* `DELETE /orders/{id}` : Cancels an order
+* `GET /seller/{sellerid}` : Obtener el vendedor con el ID proporcionado.
+* `GET /seller/current` : Obtener los detalles del vendedor actualmente registrado.
+* `GET /sellers` : Obtener todos los vendedores.
+* `POST /addseller` : Añadir un nuevo vendedor.
+* `PUT /seller` : Actualizar los detalles del vendedor.
+* `PUT /seller/update/password` : Actualizar la contraseña del vendedor.
+* `PUT /seller/update/mobile` : Actualizar el número de móvil del vendedor.
+* `DELETE /seller/{sellerid}` : Eliminar el vendedor con el ID proporcionado.
 
 
-### Sample API Response for Customer Login
+### Módulo de Productos
+
+* `GET /product/{id}` : Obtener el producto con el ID proporcionado.
+* `GET /products` : Obtener todos los productos.
+* `GET /products/{category}` : Obtener productos por categoría.
+* `GET /products/seller/{id}` : Obtener productos del vendedor con el ID proporcionado.
+* `POST /products` : Añadir un nuevo producto a la base de datos.
+* `PUT /products` : Actualizar el producto con el ID proporcionado.
+* `PUT /products/{id}` : Actualizar la cantidad del producto.
+* `DELETE /product/{id}` : Eliminar el producto con el ID proporcionado.
+
+
+### Módulo de Carrito
+
+* `GET /cart` : Obtener todos los artículos en el carrito del cliente.
+* `POST /cart/add` : Añadir un artículo al carrito.
+* `DELETE /cart` : Eliminar un artículo del carrito.
+* `DELETE /cart/clear` : Vaciar todo el carrito.
+
+
+### Módulo de Pedidos
+* `GET /orders/{id}` : Obtener los detalles del pedido con el ID proporcionado.
+* `GET /orders` : Obtener todos los pedidos.
+* `GET /orders/by/date` : Obtener los pedidos realizados en la fecha proporcionada (DD-MM-AAAA).
+* `POST /order/place` : Realizar un nuevo pedido basado en los artículos del carrito.
+* `PUT /orders/{id}` : Actualizar un pedido pendiente.
+* `DELETE /orders/{id}` : Cancelar un pedido.
+
+
+### Ejemplo de Respuesta API para el Inicio de Sesión del Cliente
 
 `POST   localhost:8009/login/customer`
 
