@@ -28,25 +28,38 @@
 
 
 ## Instalación y Ejecución
-* Antes de ejecutar el servidor API, debes actualizar la configuración de la base de datos dentro del archivo application.properties.
-* Actualiza el número de puerto, el nombre de usuario y la contraseña según la configuración de tu base de datos local.se config.
+* Primero, deben contar con las siguientes herramientas
+  * Visual Studio Code
+  * Java 8
+  * MySQL 
+### Preparación Visual Studio Code 
+* Una vez instalado Visual Studio, deben instalar las siguientes extensiones:
+  * Extension Pack for Java.
+  * Spring Initializr Java Support.
+### Preparación MySQL
+* Una vez instalado MySQL, deben crear una base de datos con el nombre "ecommercedb"
+* Luego de crear la base de datos, el servidor API rellenara de forma automatica las tablas de la base de datos.
+
+
+* Antes de ejecutar el servidor API, debes actualizar la configuración de la base de datos dentro del archivo application.properties(E-Commerce-Backend\src\main\resources\application.properties).
+* Actualiza el número de puerto, el nombre de usuario y la contraseña según la configuración de tu base de datos local.
 
 ```
-    server.port=8009
+    server.port=8009(Puerto en el que se inicializa el servidor"
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/ecommercedb
-    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-    spring.datasource.username=root
-    spring.datasource.password=root
+    spring.datasource.username=root(Nombre de usuario base de datos)
+    spring.datasource.password=root(Contraseña base de datos)
 
 ```
+
+### Ejecución del servidor.
+
+* Para ejecutar la API, desde Visual Studio Code deben abrir el archivo deECommerceBackendApplication(E-Commerce-Backend\src\main\java\com\masai\ECommerceBackendApplication.java)
+* Una vez abierto el archivo, encima de la función public static void main. Les saldra dos opciones, Run|Debug, seleccionan Debug y esperan que se inicialice el servidor API
 
 ## Endpoint Raíz de la API
-
-`https://localhost:8009/`
-
-`http://localhost:8009/swagger-ui/index.html#/`
-
+* Para acceder a la API desde el navegador, ingresen la siguiente URL:
+  * `http://localhost:8009/swagger-ui/index.html#/`
 
 ## Endpoints de los Módulos de la API
 
